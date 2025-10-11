@@ -1,0 +1,28 @@
+# Bun test configuration
+
+[test]
+# Enable coverage reporting by default
+coverage = true
+
+# Coverage threshold (current: 73% lines, 64% functions)
+# Goal is 80%, but requires additional hook/component testing infrastructure
+coverageThreshold = { lines = 0.73, functions = 0.64 }
+
+# Coverage reporters (text and lcov supported by Bun)
+coverageReporter = ["text", "lcov"]
+
+# Output directory for coverage reports
+coverageDir = "./coverage"
+
+# Skip test files from coverage
+coverageSkipTestFiles = true
+
+# Ignore patterns for coverage
+coveragePathIgnorePatterns = [
+  "**/__tests__/**",
+  "**/*.test.ts",
+  "**/*.test.tsx",
+  "**/test-*.ts",
+  "**/test-*.tsx",
+  "src/main.tsx",  # Demo app, not library code
+]

@@ -1,0 +1,37 @@
+# Source files (only ship built files)
+src/
+
+# Tests
+**/__tests__/
+**/*.test.ts
+**/*.test.tsx
+*.test.ts
+*.test.tsx
+test-results.md
+
+# Examples (users can view on GitHub)
+examples/
+
+# Build artifacts
+*.tsbuildinfo
+tsconfig.json
+
+# Development files
+.claude/
+.git/
+.gitignore
+bunfig.toml
+build.ts
+
+# Coverage reports
+coverage/
+*.lcov
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.log
+*.backup
+.DS_Store
