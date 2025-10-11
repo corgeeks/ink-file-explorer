@@ -1,12 +1,12 @@
-import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import { Box, useInput } from 'ink';
 import PropTypes from 'prop-types';
+import React, { useCallback, useEffect,useMemo, useRef, useState } from 'react';
+
+import { createDirectory, createFile, renameFileOrDirectory } from '../lib/fileSystem.js';
+import { useFileSystem, useFilter, useInputMode, useSelection, useTerminalSize } from '../lib/hooks/index.js';
 import type { FileExplorerProps } from '../types/index.js';
-import { useFileSystem, useSelection, useFilter, useInputMode, useTerminalSize } from '../lib/hooks/index.js';
-import { createFile, createDirectory, renameFileOrDirectory } from '../lib/fileSystem.js';
-import type { FileSystemError } from '../types/index.js';
-import { FileList } from './FileList.js';
 import { BottomBar } from './BottomBar.js';
+import { FileList } from './FileList.js';
 
 /**
  * A vim-inspired file explorer component for Ink CLI applications.
@@ -47,7 +47,7 @@ export function InkFileExplorer(props: FileExplorerProps) {
 	const {
 		selectFile = true,
 		selectDirectory = true,
-		closeOnSelection = true,
+		closeOnSelection: _closeOnSelection = true,
 		fileFilters = [],
 		vimMode = false,
 		onSelect,
@@ -69,8 +69,8 @@ export function InkFileExplorer(props: FileExplorerProps) {
 	const [scrollOffset, setScrollOffset] = useState(0);
 	const scrollPositions = useRef<Map<string, number>>(new Map());
 
-	const { currentPath, entries, isLoading, error: fsError, navigateToPath, refresh } = useFileSystem(initialPath, showHidden);
-	const { mode, setMode, enterSearchMode, enterCreateFileMode, enterCreateDirMode, enterRenameMode, enterErrorMode, exitToNormal } = useInputMode();
+	const { currentPath, entries, isLoading: _isLoading, error: fsError, navigateToPath, refresh } = useFileSystem(initialPath, showHidden);
+	const { mode, setMode: _setMode, enterSearchMode, enterCreateFileMode, enterCreateDirMode, enterRenameMode, enterErrorMode, exitToNormal } = useInputMode();
 	const { filterString, filteredEntries, setFilterString, clearFilter } = useFilter(entries);
 
 	// Apply file filters from props
@@ -94,7 +94,7 @@ export function InkFileExplorer(props: FileExplorerProps) {
 		});
 	}, [filteredEntries, fileFilters, selectFile]);
 
-	const { selectedIndex, navigateUp, navigateDown, reset } = useSelection(finalEntries);
+	const { selectedIndex, navigateUp, navigateDown, reset: _reset } = useSelection(finalEntries);
 
 	const selectedEntry = finalEntries[selectedIndex];
 

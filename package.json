@@ -2,7 +2,14 @@
   "name": "@corgeeks/ink-file-explorer",
   "version": "0.1.0",
   "description": "A vim-inspired file explorer component for Ink CLI applications",
-  "keywords": ["ink", "cli", "file-explorer", "terminal", "react", "vim"],
+  "keywords": [
+    "ink",
+    "cli",
+    "file-explorer",
+    "terminal",
+    "react",
+    "vim"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/corgeek/ink-file-explorer.git"
@@ -35,14 +42,24 @@
     "LICENSE"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@eslint/js": "^9.37.0",
     "@types/bun": "latest",
     "@types/node": "^20.0.0",
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.0.0",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "husky": "^9.1.7",
     "ink": "^6.3.1",
     "ink-testing-library": "^4.0.0",
     "react": "^19.2.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.46.0"
   },
   "peerDependencies": {
     "typescript": "^5",
@@ -59,7 +76,10 @@
     "test:watch": "bun test --watch",
     "build": "bun run build.ts",
     "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build",
+    "prepare": "husky"
   }
 }

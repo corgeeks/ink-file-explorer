@@ -36,8 +36,9 @@
  *   - Esc: Clear search filter
  */
 
+import { Box, render, Text } from 'ink';
 import React from 'react';
-import { render, Box, Text } from 'ink';
+
 import { InkFileExplorer } from './components/InkFileExplorer.js';
 
 // Parse command line arguments
@@ -59,7 +60,7 @@ const filterArg = args[filterIndex + 1];
 if (filterIndex !== -1 && filterArg) {
 	try {
 		fileFilters.push(new RegExp(filterArg));
-	} catch (e) {
+	} catch (_e) {
 		console.error('Invalid regex pattern:', filterArg);
 		process.exit(1);
 	}

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-import React from 'react';
-import { render, Box, Text, useInput } from 'ink';
+import type { FileEntry } from '@corgeeks/ink-file-explorer';
 import {
 	useFileSystem,
-	useSelection,
 	useFilter,
 	useInputMode,
-	type FileEntry,
+	useSelection,
 } from '@corgeeks/ink-file-explorer';
+import { Box, render, Text, useInput } from 'ink';
+import React from 'react';
 
 /**
  * Custom File Explorer Example
@@ -33,6 +33,9 @@ function CustomFileExplorer() {
 
 	// Use the input mode hook
 	const { mode, enterSearchMode, exitToNormal } = useInputMode();
+
+	// Get the currently selected entry with explicit typing
+	const selectedEntry: FileEntry | undefined = filteredEntries[selectedIndex];
 
 	// Handle input
 	useInput((input, key) => {
@@ -67,8 +70,6 @@ function CustomFileExplorer() {
 			enterSearchMode();
 		}
 	});
-
-	const selectedEntry = filteredEntries[selectedIndex];
 
 	return (
 		<Box flexDirection="column">

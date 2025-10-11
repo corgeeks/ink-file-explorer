@@ -1,7 +1,8 @@
-import { test, expect, describe } from 'bun:test';
+import { describe,expect, test } from 'bun:test';
 import React from 'react';
-import { useSelection } from '../../lib/hooks/useSelection.js';
-import type { FileEntry } from '../../types/index.js';
+
+import type { FileEntry } from '../../../types/index.js';
+import { useSelection } from '../useSelection.js';
 
 describe('useSelection', () => {
 	const createMockEntries = (count: number): FileEntry[] => {

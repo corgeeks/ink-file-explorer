@@ -1,6 +1,7 @@
-import React from 'react';
 import { Box, Text } from 'ink';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import type { InputMode } from '../types/index.js';
 
 /**

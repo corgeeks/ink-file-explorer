@@ -1,8 +1,9 @@
-import { test, expect, describe } from 'bun:test';
-import React from 'react';
+import { describe,expect, test } from 'bun:test';
 import { render } from 'ink-testing-library';
-import { FileList } from '../../components/FileList.js';
+import React from 'react';
+
 import type { FileEntry } from '../../types/index.js';
+import { FileList } from '../FileList.js';
 
 describe('FileList', () => {
 	const createMockEntries = (): FileEntry[] => {
