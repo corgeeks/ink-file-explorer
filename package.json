@@ -2,7 +2,14 @@
   "name": "@corgeeks/ink-file-explorer",
   "version": "0.1.0",
   "description": "A vim-inspired file explorer component for Ink CLI applications",
-  "keywords": ["ink", "cli", "file-explorer", "terminal", "react", "vim"],
+  "keywords": [
+    "ink",
+    "cli",
+    "file-explorer",
+    "terminal",
+    "react",
+    "vim"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/corgeek/ink-file-explorer.git"
@@ -41,6 +48,7 @@
     "@types/node": "^20.0.0",
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.0.0",
+    "husky": "^9.1.7",
     "ink": "^6.3.1",
     "ink-testing-library": "^4.0.0",
     "oxlint": "^1.22.0",
@@ -64,6 +72,7 @@
     "build": "bun run build.ts",
     "clean": "rm -rf dist",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build",
+    "prepare": "husky"
   }
 }
