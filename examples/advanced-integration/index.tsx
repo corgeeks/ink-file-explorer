@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import React, { useState } from 'react';
-import { render, Box, Text } from 'ink';
 import { InkFileExplorer } from '@corgeeks/ink-file-explorer';
+import { Box, render, Text } from 'ink';
+import React, { useState } from 'react';
 
 /**
  * Advanced Integration Example
@@ -135,9 +135,10 @@ function App() {
 
 // Helper component for input handling when not using InkFileExplorer
 function HiddenInput({ onPress }: { onPress: (key: string) => void }) {
-	const [lastKey, setLastKey] = React.useState('');
+	const [_lastKey, setLastKey] = React.useState('');
 
 	React.useEffect(() => {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const handler = (ch: string, key: any) => {
 			const keyName = key.name || ch;
 			setLastKey(keyName);

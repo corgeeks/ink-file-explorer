@@ -1,8 +1,8 @@
 /**
  * Test utilities for React components and hooks
  */
-import React from 'react';
 import { render as inkRender } from 'ink-testing-library';
+import React from 'react';
 
 /**
  * Custom render function that wraps ink-testing-library

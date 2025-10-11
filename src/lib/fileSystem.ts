@@ -1,11 +1,12 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import type { FileEntry, FileSystemError, DirectoryReadResult } from '../types/index.js';
+
+import type { DirectoryReadResult,FileEntry, FileSystemError } from '../types/index.js';
 
 /**
  * Read directory contents and return as FileEntry array
  */
-export async function readDirectory(dirPath: string, showHidden: boolean = false): Promise<DirectoryReadResult> {
+export async function readDirectory(dirPath: string, showHidden = false): Promise<DirectoryReadResult> {
 	try {
 		const absolutePath = path.resolve(dirPath);
 

@@ -1,1 +1,48 @@
-bun test
+#!/usr/bin/env bash
+
+# Pre-commit hook: Run linting, tests, and type-checking
+# All checks run even if one fails, but commit is blocked if any fail
+
+EXIT_CODE=0
+
+echo "🔍 Running pre-commit checks..."
+echo ""
+
+# 1. Lint and auto-fix
+echo "📝 Running ESLint (auto-fix)..."
+if bun run lint:fix; then
+  echo "✅ Linting passed"
+else
+  echo "❌ Linting failed"
+  EXIT_CODE=1
+fi
+echo ""
+
+# 2. Run tests (coverage disabled in pre-commit for cleaner output)
+echo "🧪 Running tests..."
+if bun test --no-coverage; then
+  echo "✅ Tests passed"
+else
+  echo "❌ Tests failed"
+  EXIT_CODE=1
+fi
+echo ""
+
+# 3. Type check
+echo "🔧 Running type-check..."
+if bun run type-check; then
+  echo "✅ Type-check passed"
+else
+  echo "❌ Type-check failed"
+  EXIT_CODE=1
+fi
+echo ""
+
+# Summary
+if [ $EXIT_CODE -eq 0 ]; then
+  echo "✨ All pre-commit checks passed!"
+else
+  echo "💥 Some pre-commit checks failed. Please fix the issues above."
+fi
+
+exit $EXIT_CODE

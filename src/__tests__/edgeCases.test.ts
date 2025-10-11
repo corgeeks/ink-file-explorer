@@ -1,14 +1,16 @@
-import { test, expect, describe, afterEach } from 'bun:test';
-import * as path from 'node:path';
 import * as fs from 'node:fs';
+import * as path from 'node:path';
+
+import { afterEach,describe, expect, test } from 'bun:test';
+
 import {
-	readDirectory,
-	validateFileName,
-	createFile,
 	createDirectory,
+	createFile,
+	readDirectory,
 	renameFileOrDirectory,
+	validateFileName,
 } from '../lib/fileSystem.js';
-import { createMockFileSystem, cleanupMockFileSystem } from './helpers/mockFs.js';
+import { cleanupMockFileSystem,createMockFileSystem } from './helpers/mockFs.js';
 
 describe('Edge Cases', () => {
 	let testDir: string;

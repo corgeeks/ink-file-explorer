@@ -2,36 +2,36 @@
 export { InkFileExplorer } from './components/InkFileExplorer.js';
 
 // Sub-component exports for advanced usage
-export { FileList } from './components/FileList.js';
 export { BottomBar } from './components/BottomBar.js';
+export { FileList } from './components/FileList.js';
 
 // Custom hooks for building custom file explorers
 export {
 	useFileSystem,
-	useSelection,
 	useFilter,
 	useInputMode,
+	useSelection,
 	useTerminalSize,
 } from './lib/hooks/index.js';
 
 // Type exports - Component props
 export type {
-	FileExplorerProps,
+	DirectoryReadResult,
 	FileEntry,
+	FileExplorerProps,
 	FileSystemError,
 	InputMode,
-	DirectoryReadResult,
 } from './types/index.js';
 
 // Type exports - Component prop interfaces
-export type { FileListProps } from './components/FileList.js';
 export type { BottomBarProps } from './components/BottomBar.js';
+export type { FileListProps } from './components/FileList.js';
 
 // Type exports - Hook return types
 export type {
+	TerminalSize,
 	UseFileSystemResult,
-	UseSelectionResult,
 	UseFilterResult,
 	UseInputModeResult,
-	TerminalSize,
+	UseSelectionResult,
 } from './lib/hooks/index.js';

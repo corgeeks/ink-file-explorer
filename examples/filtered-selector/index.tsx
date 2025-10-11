@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import React from 'react';
-import { render } from 'ink';
 import { InkFileExplorer } from '@corgeeks/ink-file-explorer';
+import { render } from 'ink';
+import React from 'react';
 
 /**
  * Filtered File Selector Example

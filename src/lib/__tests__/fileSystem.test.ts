@@ -1,15 +1,17 @@
-import { test, expect, describe, beforeEach, afterEach } from 'bun:test';
-import * as path from 'node:path';
 import * as fs from 'node:fs';
+import * as path from 'node:path';
+
+import { afterEach,beforeEach, describe, expect, test } from 'bun:test';
+
+import { cleanupMockFileSystem, createMockFileSystem, createRestrictedDirectory } from '../../__tests__/helpers/mockFs.js';
 import {
-	readDirectory,
-	isHidden,
-	validateFileName,
 	createDirectory,
 	createFile,
+	isHidden,
+	readDirectory,
 	renameFileOrDirectory,
-} from '../lib/fileSystem.js';
-import { createMockFileSystem, cleanupMockFileSystem, createRestrictedDirectory } from './helpers/mockFs.js';
+	validateFileName,
+} from '../fileSystem.js';
 
 describe('fileSystem', () => {
 	let testDir: string;

@@ -1,6 +1,7 @@
-import React from 'react';
 import { Box, Text } from 'ink';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import type { FileEntry, FileSystemError } from '../types/index.js';
 
 export interface FileListProps {
@@ -120,7 +121,7 @@ export function FileList({ entries, selectedIndex, error, viewportStart = 0, vie
 				const isSelected = actualIndex === selectedIndex;
 
 				// Determine color based on entry type
-				let color: string = 'white';
+				let color = 'white';
 				let dimColor = false;
 
 				if (entry.isDirectory) {

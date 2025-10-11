@@ -1,8 +1,9 @@
-import { test, expect, describe, afterEach } from 'bun:test';
-import React from 'react';
+import { afterEach,describe, expect, test } from 'bun:test';
 import { render } from 'ink-testing-library';
+import React from 'react';
+
 import { InkFileExplorer } from '../components/InkFileExplorer.js';
-import { createMockFileSystem, cleanupMockFileSystem } from './helpers/mockFs.js';
+import { cleanupMockFileSystem,createMockFileSystem } from './helpers/mockFs.js';
 
 describe('InkFileExplorer Integration Tests', () => {
 	let testDir: string;
