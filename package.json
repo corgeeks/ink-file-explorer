@@ -1,6 +1,6 @@
 {
   "name": "@corgeeks/ink-file-explorer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A vim-inspired file explorer component for Ink CLI applications",
   "keywords": [
     "ink",
