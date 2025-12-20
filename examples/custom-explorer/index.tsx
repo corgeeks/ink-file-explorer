@@ -130,4 +130,4 @@ function CustomFileExplorer() {
 	);
 }
 
-render(<CustomFileExplorer />);
+render(<CustomFileExplorer />, {readlineBackend: true});

@@ -1,6 +1,8 @@
 # Source files (only ship built files)
 src/
 
+node_modules/
+
 # Tests
 **/__tests__/
 **/*.test.ts
