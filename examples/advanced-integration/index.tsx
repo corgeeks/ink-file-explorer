@@ -154,4 +154,4 @@ function HiddenInput({ onPress }: { onPress: (key: string) => void }) {
 	return null;
 }
 
-render(<App />);
+render(<App />, {readlineBackend: true});

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import { InkFileExplorer } from '@corgeeks/ink-file-explorer';
 import { render } from 'ink';
-import React from 'react';
 
 /**
  * Filtered File Selector Example
@@ -32,4 +31,4 @@ function App() {
 	);
 }
 
-render(<App />);
+render(<App />, {readlineBackend: true});
